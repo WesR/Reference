@@ -20,3 +20,7 @@ useful for removing the title from a ripped dvd
 ```bash
 for i in *.mkv ; do mkvpropedit "$i" --edit info --set "title="; done
 ```
+## Imagemagick convert tiff to jpg
+```bash
+mkdir compress; for i in *.tif; do convert "$i" "./compress/${i%.tif}.jpg"; done
+```
