@@ -24,3 +24,8 @@ for i in *.mkv ; do mkvpropedit "$i" --edit info --set "title="; done
 ```bash
 mkdir compress; for i in *.tif; do convert "$i" "./compress/${i%.tif}.jpg"; done
 ```
+## ffmpeg cut a video (no encoding)
+```bash
+## ss = start t = end
+ffmpeg -i input.mp4 -acodec copy -vcodec copy -ss 02:16:30 -t 01:03:10 output.mp4
+```
