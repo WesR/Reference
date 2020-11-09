@@ -34,3 +34,6 @@ ffmpeg -i input.mp4 -acodec copy -vcodec copy -ss 02:16:30 -t 01:03:10 output.mp
 #Useful to make an ffmpeg list of files for concatenation
 find /full/path/to/dir -maxdepth 2 -type f -name *.flac -printf "file '%f'\n" >> ~/Downloads/music.txt
 ```
+## Randomize lines in a file
+```
+sort --sort=random input.txt >> output.txt
