@@ -35,5 +35,11 @@ ffmpeg -i input.mp4 -acodec copy -vcodec copy -ss 02:16:30 -t 01:03:10 output.mp
 find /full/path/to/dir -maxdepth 2 -type f -name *.flac -printf "file '%p'\n" >> ~/Downloads/music.txt
 ```
 ## Randomize lines in a file
-```
+```bash
 sort --sort=random input.txt >> output.txt
+```
+## ffmpeg encode audio
+```bash
+# -vn is no video
+ffmpeg -i input.wav -vn -c:a aac -b:a 128k output.m4a
+```
