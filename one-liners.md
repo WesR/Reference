@@ -29,3 +29,8 @@ mkdir compress; for i in *.tif; do convert "$i" "./compress/${i%.tif}.jpg"; done
 ## ss = start t = end
 ffmpeg -i input.mp4 -acodec copy -vcodec copy -ss 02:16:30 -t 01:03:10 output.mp4
 ```
+## Find and list files of a specific extension, format them, and write their full path to a text file
+```bash
+#Useful to make an ffmpeg list of files for concatenation
+find /full/path/to/dir -maxdepth 2 -type f -name *.flac -printf "file '%f'\n" >> ~/Downloads/music.txt
+```
