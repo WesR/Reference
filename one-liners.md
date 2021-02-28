@@ -43,3 +43,8 @@ sort --sort=random input.txt >> output.txt
 # -vn is no video
 ffmpeg -i input.wav -vn -c:a aac -b:a 128k output.m4a
 ```
+## Encode an mkv keeping all the audio/subtitle streams
+`-map 0` maps all streams. `-c copy` sets default to copy.
+```bash
+ffmpeg -i innie.mkv -map 0 -c copy -c:v libx265 -c:a aac -b:a 128k outie.mkv
+```
