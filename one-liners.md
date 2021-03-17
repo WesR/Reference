@@ -6,6 +6,11 @@ useful for when you rip dvd's and need to rename the episodes
 ls | awk '{start=0;system("mv ./" $1 " \"./Simpsons-S01E0"start+NR ".mkv\"")}'
 ```
 
+## Sed rename files in a directory
+```bash
+rename 's/find01/replace02/' filestart*
+```
+
 ## Encode a folder with ffmpeg and output into a folder called encodes
 useful for when you take ripped dvd output and need to encode it
 ```bash
