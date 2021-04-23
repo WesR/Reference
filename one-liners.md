@@ -53,3 +53,9 @@ ffmpeg -i input.wav -vn -c:a aac -b:a 128k output.m4a
 ```bash
 ffmpeg -i innie.mkv -map 0 -c copy -c:v libx265 -c:a aac -b:a 128k outie.mkv
 ```
+
+## ffmpeg squash image into video
+between(t,2.3,8.8) means image visible from 2.3 sec - 8.8 sec
+```bash
+ffmpeg -i cc-lower3.webm -i image.png -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,2.3,8.8)'" output.mkv
+```
