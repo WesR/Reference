@@ -18,6 +18,9 @@ mkdir encodes; for i in *.mkv; do ffmpeg -i "$i" "./encodes/${i%.*}.mkv"; done
 
 # for interlaced video with h265 and audio passthrough
 mkdir encodes; for i in *.mkv; do ffmpeg -i "$i" -vf yadif -c:v libx265 -preset slow -c:a copy "./encodes/${i%.*}.mkv"; done
+
+# interlaced video, h264, audio 1 passed through, rest encoded, subs passed through
+mkdir encodes; for i in *.mkv; do ffmpeg -i "$i" -map 0 -c copy -vf yadif -c:v libx264 -preset slow -c:a aac -c:a:0 copy -b:a 128k "./encodes/${i%.*}.mkv"; done
 ```
 
 ## Remove the encoded title in a mkv
