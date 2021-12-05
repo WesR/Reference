@@ -1,7 +1,7 @@
 # Reference
 This repo holds a (small) collection of oneliners and small scripts
 
-[One liners](./one-liners.md)
+[One liners](./one-liners.md) \
 [bash priv esc methods](./priv_esc.md)
 
 ## Scripts
