@@ -62,3 +62,12 @@ between(t,2.3,8.8) means image visible from 2.3 sec - 8.8 sec
 ```bash
 ffmpeg -i cc-lower3.webm -i image.png -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,2.3,8.8)'" output.mkv
 ```
+## Forward local port to internal server port
+You can use this to expose a service to loopback on a server, then forward that service locally. Keeps it fully protected.
+```bash
+ssh -L localport:127.0.0.1:serverport username@serverip
+```
+## Block a bash script until a curl says "up"
+```bash
+until curl --stdeerr - localhost:1337/status | grep -q "up" do sleep 15: done
+```
