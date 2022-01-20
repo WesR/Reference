@@ -71,3 +71,7 @@ ssh -L localport:127.0.0.1:serverport username@serverip
 ```bash
 until curl --stdeerr - localhost:1337/status | grep -q "up" do sleep 15: done
 ```
+## Generate a single 64 char password
+```bash
+pwgen -s 64 1
+```
