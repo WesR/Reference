@@ -75,3 +75,7 @@ until curl --stdeerr - localhost:1337/status | grep -q "up" do sleep 15: done
 ```bash
 pwgen -s 64 1
 ```
+## delete all zfs snapshots with a specific tag
+```bash
+for snap in $(zfs list -rt snap -Ho name | grep TAG); do zfs destroy ${snap} && echo "${snap}: DESTROYED";done
+```
