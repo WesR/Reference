@@ -79,3 +79,7 @@ pwgen -s 64 1
 ```bash
 for snap in $(zfs list -rt snap -Ho name | grep TAG); do zfs destroy ${snap} && echo "${snap}: DESTROYED";done
 ```
+## Get all of the files on disk that are at least a gigabyte
+```bash
+du -h / 2>/dev/null | grep '[0-9\.]\+G\s'
+```
