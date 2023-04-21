@@ -7,4 +7,5 @@ You can use sudo -l to specify what you can run as sudo
 
 ---
 `sudo man man` then type `!/bin/bash` \
+use `sudo -l` to see what programs you can sudo\
 This works if you can only sudo some commands, and they use the linux pagnation thing
