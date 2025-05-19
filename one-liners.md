@@ -32,6 +32,11 @@ for i in *.mkv ; do mkvpropedit "$i" --edit info --set "title="; done
 ```bash
 mkdir compress; for i in *.tif; do convert "$i" "./compress/${i%.tif}.jpg"; done
 ```
+similar to the above, this works on nested folders and drops everything into ./compress/folder_img.png
+```bash
+mkdir -p compress && find . -type f \( -iname "*.tif" -o -iname "*.tiff" \) -exec bash -c 'for f; do bn="${f#./}"; bn="${bn%.*}"; bn="${bn//\//_}.jpg"; convert "$f" "./compress/$bn"; done' bash {} +
+```
+
 ## ffmpeg cut a video (no encoding)
 ```bash
 ## ss = start t = end
